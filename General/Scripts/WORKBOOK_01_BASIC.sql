@@ -9,9 +9,9 @@ FROM TB_DEPARTMENT;
 
 -- 3번 -- "국어국문학과" 에 다니는 여학생 중 현재 휴학중인 여학생을 조회하시오. 
 -- (국문학과의 학과코드(DEPARTMENT_NO)는 001) 
-SELECT STUDENT_NAME, DEPARTMENT_NO, ABSENCE_YN,STUDENT_SSN
+SELECT STUDENT_NAME
 FROM TB_STUDENT
-WHERE DEPARTMENT_NO = 001 AND ABSENCE_YN= 'Y';
+WHERE DEPARTMENT_NO = 001 AND ABSENCE_YN= 'Y' AND SUBSTR(STUDENT_SSN,8,1) = '2' ;
 
 -- 4번  -- 도서관에서 대출 도서 장기 연체자들을 찾아 이름을 게시하고자 한다. 
 -- 그 대상자들의 학번이 다음과 같을 때 대상자들을 찾는 적절한 SQL구문을 작성하시오. 
